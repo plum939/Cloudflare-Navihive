@@ -56,8 +56,8 @@
 > 详细步骤见[完整部署指南](https://zqq-nuli.github.io/Cloudflare-Navihive/deployment/)
 
 ---
--- 创建分组表
-```CREATE TABLE IF NOT EXISTS groups (
+-- 创建分组表```
+CREATE TABLE IF NOT EXISTS groups (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     order_num INTEGER NOT NULL,
@@ -67,8 +67,8 @@
 );
 ```
 
--- 创建站点表
-```CREATE TABLE IF NOT EXISTS sites (
+-- 创建站点表```
+CREATE TABLE IF NOT EXISTS sites (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER NOT NULL,
     name TEXT NOT NULL,
@@ -83,8 +83,8 @@
     FOREIGN KEY (group_id) REFERENCES groups(id) ON DELETE CASCADE
 );
 ```
--- 创建配置表
-```CREATE TABLE IF NOT EXISTS configs (
+-- 创建配置表```
+CREATE TABLE IF NOT EXISTS configs (
     key TEXT PRIMARY KEY,
     value TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
