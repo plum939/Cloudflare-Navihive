@@ -56,8 +56,9 @@
 > 详细步骤见[完整部署指南](https://zqq-nuli.github.io/Cloudflare-Navihive/deployment/)
 
 ---
-```
+
 -- 创建分组表
+```
 CREATE TABLE IF NOT EXISTS groups (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -67,8 +68,9 @@ CREATE TABLE IF NOT EXISTS groups (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
-```
+
 -- 创建站点表
+```
 CREATE TABLE IF NOT EXISTS sites (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER NOT NULL,
@@ -93,8 +95,9 @@ CREATE TABLE IF NOT EXISTS configs (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
-```
+
 -- 标记数据库已初始化
+```
 INSERT INTO configs (key, value) VALUES ('DB_INITIALIZED', 'true');
 ```
 -- 创建只读模式所需索引
