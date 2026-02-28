@@ -86,8 +86,9 @@ CREATE TABLE IF NOT EXISTS sites (
     FOREIGN KEY (group_id) REFERENCES groups(id) ON DELETE CASCADE
 );
 ```
+
+-- 创建配置表
 ```
--- 创建配置表```
 CREATE TABLE IF NOT EXISTS configs (
     key TEXT PRIMARY KEY,
     value TEXT NOT NULL,
